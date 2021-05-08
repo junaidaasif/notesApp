@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(78, 78, 100);
+        }
+        .cont{
+            height: 400px;
+            width: 350px;
+            background-color: wheat;            
+            position: absolute;
+            top: 18%;
+            left: 37%;
+            border-radius: 10px;
+        }
+
+        .inpCont{
+            max-width: 270px;
+            height:90px;
+            margin: auto;
+            margin-top: 30px;
+            background-color: white;
+            font-size: 35px;
+            text-align: end;
+        }
+
+        #inp{
+            height: 80px;
+            width: 250px;
+        }
+       
+       .num{
+        max-width: 270px;
+            height:90px;
+            margin: auto;
+            margin-top: 20px;
+        }
+        
+        table td{
+            padding: 6px;
+        
+        }
+
+        button{
+            height: 35px;
+            width: 53px;
+            
+            /* background-color: white; */
+            
+           outline: none;
+           
+        }
+
+
+        #tb{
+            width: 119px;
+        }
+
+ 
+    </style>
+
+    <script>
+        // function show(v){
+        //     var a = document.getElementById("inp");
+        //     a.value+=v;
+        // }
+
+        // function clr(){
+        //     document.getElementById("inp").value= ""
+        // }
+        // function solve(){
+        //   var a =  document.getElementById("inp").value;
+        //   var y = eval(a);
+        //   document.getElementById("inp").value = y;
+        // }
+
+        // function back(){
+
+        // }
+
+        function show(v){
+            var a = document.getElementById('sh');
+            a.innerHTML+=v;
+        }
+
+        function clr(){
+            document.getElementById("sh").innerHTML = ""
+        }
+        function solve(){
+            
+         var a = document.getElementById('sh').innerHTML;
+         var y = eval(a);
+         document.getElementById("sh").innerHTML = y;
+        }
+
+        function back(){
+            var a = document.getElementById('sh').innerHTML;
+            var b = a.slice(0, -1);
+            document.getElementById("sh").innerHTML = b;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="cont">
+        <div class="inpCont" id="sh">
+            <!-- <input type="text"  id="inp"  onkeypress="return false;"/> -->
+        </div>
+        <div class="num">
+            <table>
+                <tr>
+                    <td><button id="ta" onclick="clr()">AC</button></td>
+                    <td colspan="2"><button id="tb" onclick="back()">BACK</button></td>
+                    <td><button id="tdi" onclick="show('/')">/</button></td>
+                </tr>
+                <tr>
+                <td><button id="t7" onclick="show('7')">7</button></td>
+                <td><button id="t8" onclick="show('8')">8</button></td>
+                <td><button id="t9" onclick="show('9')">9</button></td>
+                <td><button id="tx" onclick="show('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button id="t4" onclick="show('4')">4</button></td>
+                    <td><button id="t5" onclick="show('5')">5</button></td>
+                    <td><button id="t6" onclick="show('6')">6</button></td>
+                    <td><button id="tm" onclick="show('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="t1" onclick="show('1')">1</button></td>
+                    <td><button id="t2" onclick="show('2')">2</button></td>
+                    <td><button id="t3" onclick="show('3')">3</button></td>
+                    <td><button id="tp" onclick="show('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button id="tO" onclick="show('0')">0</button></td>
+                    <td><button id="tOO" onclick="show('00')">00</button></td>
+                    <td><button id="tdi" onclick="show('.')">.</button></td>
+                    <td><button id="te" onclick="solve()">=</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont {
+            width: 100%;
+            height: 100vh;
+            /* padding-left:; */
+
+            /* background-color: black; */
+        }
+
+        .one {
+            width: 65%;
+            height: 95%;
+            /* background-color: tomato; */
+            float: left;
+            margin-left: 40px;
+
+        }
+
+        .two {
+            width: 30%;
+            height: 95%;
+            background-color: teal;
+            float: left;
+
+        }
+
+        .mar {
+
+            width: 80%;
+            height: 40%;
+            margin-left: 18%;
+            margin-top: 18%;
+            font-size: 25px;
+        }
+
+
+        .butt table td {
+            padding: 8px;
+            font-size: 20px;
+
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .butt button {
+            background-color: rgba(105, 102, 102, 0.692);
+            outline: none;
+            /* border: none; */
+            height: 60px;
+            width: 60px;
+            border-radius: 10px;
+        }
+
+
+
+        .butt {
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+
+        .give button {
+            line-height: 1.5;
+            padding: 6px 14px;
+            color: #fff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .give button:hover {
+            background-color: rgb(245, 164, 135);
+        }
+
+        #last {
+            width: 200px;
+            height: 90px;
+            border-radius: 10px;
+            background-color: white;
+            margin-top: 15%;
+            margin-left: 28%;
+            text-align: center;
+            font-size: 25px;
+            padding-top: 5px;
+        }
+
+        #time {
+            width: 200px;
+            height: 60px;
+            background-color: white;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            position: absolute;
+            top: 8px;
+            right: 34%;
+            font-size: 25px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        #start {
+            margin-left: 25%;
+            margin-top: 40%;
+        }
+
+        #start button {
+            height: 50px;
+            width: 100px;
+            font-size: 25px;
+        }
+    </style>
+    <script>
+        var count;
+        var tount = 0;
+        var q = ["A protected member of the class in accessible in", "How can we make an class act as an interface in C++?", "Following is the invalid inclusion of a file to the current program. Identify it", "Abstract class is __", "Where is korba", "2+2", "5+50", "Who is the richest person in the world", "Who is the second richest person in the world"];
+
+        var opp1 = ["Only same class", "By only providing all the functions as virtual functions in the class.", "#include <file>", "A class must contain all pure virtual functions", "Madhya Pradesh", "9", "40", "Bill Gates", "warren buffet"];
+
+        var opp2 = ["Same class and derived class", "Defining the class following with the keyword virtual", "#include 'file'", "A class must contain at least one pure virtual function", "Chattisgarh", "4", "46", "Jeff Bejos", "Elon musk"];
+
+        var opp3 = ["Outside the class", "Defining the class following with the keyword interface", "#include < file", "A class must contain pure virtual function defined outside the class.", "Assam", "8", "55", "Elon musk", "Jeff Bejos"];
+
+        var opp4 = ["None of the above.", "Defining the class following with the keyword abstract", "All of the above are invalid", "A class may not contain pure virtual function.", "Kerala", "10", "75", "Warren buffet", "Bill Gates"];
+
+        var ans = ["Same class and derived class", "By only providing all the functions as virtual functions in the class.", "#include < file", "A class must contain at least one pure virtual function", "Chattisgarh", "4", "55", "Jeff Bejos", "Elon musk"];
+        function show(v) {
+            count = v;
+
+            document.getElementById("all").innerHTML = `<h1 id="head">${q[v - 1]}</h1>
+                <table>
+                    <tr>
+                        <td><input type="radio" id="Op1" name="ans" value="${opp1[v - 1]}"><label for="Op1" id="op1">${opp1[v - 1]}</label>
+                            </td>
+                            <td><input type="radio" id="Op2" name="ans" value="${opp2[v - 1]}"><label for="Op2" id="op2">${opp2[v - 1]}</label>
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" id="Op3" name="ans" value="${opp3[v - 1]}"><label for="Op3" id="op3">${opp3[v - 1]}</label>
+                        </td>
+                        <td><input type="radio" id="Op4" name="ans" value="${opp4[v - 1]}"><label for="Op4" id="op4">${opp4[v - 1]}</label>
+                            </td>
+                    </tr>
+                    </table>
+                <div class="give">
+                    <button id="give1" onclick="next()">Next</button>
+                    <button id="give2" onclick="answer()">Answer</button>
+                    <button id="give3" onclick="submit()">Submit</button>
+                    <button id="give3" onclick="back()">Back</button>
+                </div>`
+
+            // if (v == 1) {
+            //     count = 1;
+            //     document.getElementById("head").innerHTML = q[0];
+            //     document.getElementById("op1").innerHTML = opp1[0]
+            //     document.getElementById("op2").innerHTML = opp2[0]
+            //     document.getElementById("op3").innerHTML = opp3[0]
+            //     document.getElementById("op4").innerHTML = opp4[0]
+            // }
+            // else if (v == 2) {
+            //     count = 2;
+            //     document.getElementById("head").innerHTML = q[1];
+            //     document.getElementById("op1").innerHTML = opp1[1]
+            //     document.getElementById("op2").innerHTML = opp2[1]
+            //     document.getElementById("op3").innerHTML = opp3[1]
+            //     document.getElementById("op4").innerHTML = opp4[1]
+            // }
+            // else if (v == 3) {
+            //     count = 3
+            //     document.getElementById("head").innerHTML = q[2];
+            //     document.getElementById("op1").innerHTML = opp1[2]
+            //     document.getElementById("op2").innerHTML = opp2[2]
+            //     document.getElementById("op3").innerHTML = opp3[2]
+            //     document.getElementById("op4").innerHTML = opp4[2]
+            // }
+            // else if (v == 4) {
+            //     count = 4
+            //     document.getElementById("head").innerHTML = q[3];
+            //     document.getElementById("op1").innerHTML = opp1[3]
+            //     document.getElementById("op2").innerHTML = opp2[3]
+            //     document.getElementById("op3").innerHTML = opp3[3]
+            //     document.getElementById("op4").innerHTML = opp4[3]
+            // }
+            // else if (v == 5) {
+            //     count = 5
+            //     document.getElementById("head").innerHTML = q[4];
+            //     document.getElementById("op1").innerHTML = opp1[4]
+            //     document.getElementById("op2").innerHTML = opp2[4]
+            //     document.getElementById("op3").innerHTML = opp3[4]
+            //     document.getElementById("op4").innerHTML = opp4[4]
+            // }
+            // else if (v == 6) {
+            //     count = 6
+            //     document.getElementById("head").innerHTML = q[5];
+            //     document.getElementById("op1").innerHTML = opp1[5]
+            //     document.getElementById("op2").innerHTML = opp2[5]
+            //     document.getElementById("op3").innerHTML = opp3[5]
+            //     document.getElementById("op4").innerHTML = opp4[5]
+            // }
+            // else if (v == 7) {
+            //     count = 7;
+            //     document.getElementById("head").innerHTML = q[6];
+            //     document.getElementById("op1").innerHTML = opp1[6]
+            //     document.getElementById("op2").innerHTML = opp2[6]
+            //     document.getElementById("op3").innerHTML = opp3[6]
+            //     document.getElementById("op4").innerHTML = opp4[6]
+            // }
+            // else if (v == 8) {
+            //     count = 8;
+            //     document.getElementById("head").innerHTML = q[7];
+            //     document.getElementById("op1").innerHTML = opp1[7]
+            //     document.getElementById("op2").innerHTML = opp2[7]
+            //     document.getElementById("op3").innerHTML = opp3[7]
+            //     document.getElementById("op4").innerHTML = opp4[7]
+            // }
+            // else if (v == 9) {
+            //     count = 9;
+            //     document.getElementById("head").innerHTML = q[8];
+            //     document.getElementById("op1").innerHTML = opp1[8]
+            //     document.getElementById("op2").innerHTML = opp2[8]
+            //     document.getElementById("op3").innerHTML = opp3[8]
+            //     document.getElementById("op4").innerHTML = opp4[8]
+            // }
+
+
+        }
+
+        function next() {
+            Rlight()
+            if (count != 9) {
+                show(count + 1);
+            }
+            else {
+                show(1)
+            }
+        }
+
+        function Rlight() {
+            if (count == 1) {
+                document.getElementById("one1").style.background = 'red';
+            }
+            else if (count == 2) {
+                document.getElementById("two2").style.background = 'red';
+            }
+            else if (count == 3) {
+                document.getElementById("three").style.background = 'red';
+            }
+            else if (count == 4) {
+                document.getElementById("four").style.background = 'red';
+            }
+            else if (count == 5) {
+                document.getElementById("five").style.background = 'red';
+            }
+            else if (count == 6) {
+                document.getElementById("six").style.background = 'red';
+            }
+            else if (count == 7) {
+                document.getElementById("seven").style.background = 'red';
+            }
+            else if (count == 8) {
+                document.getElementById("eight").style.background = 'red';
+            }
+            else if (count == 9) {
+                document.getElementById("nine").style.background = 'red';
+            }
+        }
+        //     // if (count == 1) {
+        //     //     show(2);
+        //     // }
+        //     // else if (count == 2) {
+        //     //     show(3)
+        //     // }
+        //     // else if (count == 3) {
+        //     //     show(4)
+        //     // }
+        //     // else if (count == 4) {
+        //     //     show(5)
+        //     // }
+        //     // else if (count == 5) {
+        //     //     show(6)
+        //     // }
+        //     // else if (count == 6) {
+        //     //     show(7)
+        //     // }
+        //     // else if (count == 7) {
+        //     //     show(8)
+        //     // }
+        //     // else if (count == 8) {
+        //     //     show(9)
+        //     // }
+        //     // else if (count == 9) {
+        //     //     show(1)
+        //     // }
+        // }
+
+        function back() {
+            if (count != 1) {
+                show(count - 1)
+            }
+            else {
+                show(9)
+            }
+        }
+        //     if (count == 1) {
+        //         show(9);
+        //     }
+        //     else if (count == 2) {
+        //         show(1)
+        //     }
+        //     else if (count == 3) {
+        //         show(2)
+        //     }
+        //     else if (count == 4) {
+        //         show(3)
+        //     }
+        //     else if (count == 5) {
+        //         show(4)
+        //     }
+        //     else if (count == 6) {
+        //         show(5)
+        //     }
+        //     else if (count == 7) {
+        //         show(6)
+        //     }
+        //     else if (count == 8) {
+        //         show(7)
+        //     }
+        //     else if (count == 9) {
+        //         show(8)
+        //     }
+        // }
+
+        function answer() {
+
+            var ua = "";
+            var ub = "";
+            var uc = "";
+            var ud = "";
+            if (document.getElementById("Op1").checked) {
+                alert("your record store sucessfully");
+                light();
+                show(count + 1);
+
+                ua = document.getElementById("Op1").value;
+                if (ua == opp1[count - 1]) {
+
+                    tount++
+                }
+
+            }
+
+            else if (document.getElementById("Op2").checked) {
+                alert("your record store sucessfully");
+                light();
+                show(count + 1);
+
+                ub = document.getElementById("Op2").value;
+                if (ub == opp2[count - 1]) {
+
+                    tount++
+                }
+
+            }
+            else if (document.getElementById("Op3").checked) {
+                alert("your record store sucessfully");
+                light();
+                show(count + 1);
+
+                uc = document.getElementById("Op3").value;
+                if (uc == opp3[count - 1]) {
+
+                    tount++
+                }
+            }
+            else if (document.getElementById("Op4").checked) {
+                alert("your record store sucessfully");
+                light();
+                show(count + 1);
+
+                ud = document.getElementById("Op4").value;
+
+                if (ud == opp4[count - 1]) {
+
+                    tount++
+                }
+
+            }
+            else {
+                alert("please check any option")
+            }
+
+        }
+
+        function light() {
+            if (count == 1) {
+                document.getElementById("one1").style.background = 'green';
+            }
+            else if (count == 2) {
+                document.getElementById("two2").style.background = 'green';
+            }
+            else if (count == 3) {
+                document.getElementById("three").style.background = 'green';
+            }
+            else if (count == 4) {
+                document.getElementById("four").style.background = 'green';
+            }
+            else if (count == 5) {
+                document.getElementById("five").style.background = 'green';
+            }
+            else if (count == 6) {
+                document.getElementById("six").style.background = 'green';
+            }
+            else if (count == 7) {
+                document.getElementById("seven").style.background = 'green';
+            }
+            else if (count == 8) {
+                document.getElementById("eight").style.background = 'green';
+            }
+            else if (count == 9) {
+                document.getElementById("nine").style.background = 'green';
+            }
+        }
+
+        function submit() {
+            document.getElementById("all").innerHTML = `<h1 id="head">Stop writing</h1>
+            <div class="give"> <a href='instruction.html'> <button> Go to Home </button> </a> </div>`
+            document.getElementById("vis").innerHTML = `<h1 id="head">your marks is</h1>`
+            document.getElementById("last").innerHTML = `you give total ${tount} right answer out of 10`;
+
+
+
+        }
+
+        function time() {
+            show(1);
+            document.getElementById("tim").innerHTML = `<div id="time"></div>`
+            var t = 00
+            var A = 01
+            var x = setInterval(() => {
+                document.getElementById("time").innerHTML = "time left:- " + A + ":" + t
+                if (A == 00 && t == 00) {
+
+
+                    submit();
+                    clearInterval(x);
+                }
+                else if (t == 00) {
+                    t = 59;
+                    A--;
+                }
+                else {
+                    t--;
+                }
+
+
+            }, 1000);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="tim">
+
+    </div>
+    <div class="cont">
+        <div class="one" id="all1">
+            <div class="mar" id="all">
+                <div class="give" id="start">
+                    <button onclick="time()">Start</button>
+                </div>
+                <!-- <table id="tab" border="1"></table>
+                <h1 id="head">who is the prime minister</h1>
+                <table>
+                    <tr>
+                        <td><input type="radio" id="nm" name="ans" value="nm"><label for="nm" id="op1">Narendra
+                            Modi</label>
+                        </td>
+                        <td><input type="radio" id="ms" name="ans" value="ms"><label for="ms" id="op2">Manmohan
+                                Singh</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="nmo" name="ans" value="nmo""><label for="nmo" id="op3">Sonia
+                            gandhi</label>
+                        </td>
+                        <td><input type="radio" id="mso" name="ans" value="mso"><label for="mso" id="op4">Atal bihari
+                                bhajpai</label>
+                        </td>
+                    </tr>
+                </table> -->
+                <!-- <div class="give">
+                    <button id="give1" onclick="next()">Next</button>
+                    <button id="give2" onclick="answer()">Answer</button>
+                    <button id="give3" onclick="submit()">Submit</button>
+                    <button id="give3" onclick="back()">Back</button>
+                </div> -->
+            </div>
+        </div>
+        <div class="two">
+            <div class="butt" id="vis">
+                <table>
+                    <tr>
+                        <td><button id="one1" onclick="show(1)">1</button></td>
+                        <td><button id="two2" onclick="show(2)">2</button></td>
+                        <td><button id="three" onclick="show(3)">3</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="four" onclick="show(4)">4</button></td>
+                        <td><button id="five" onclick="show(5)">5</button></td>
+                        <td><button id="six" onclick="show(6)">6</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="seven" onclick="show(7)">7</button></td>
+                        <td><button id="eight" onclick="show(8)">8</button></td>
+                        <td><button id="nine" onclick="show(9)">9</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="last"></div>
+        </div>
+    </div>
+</body>
+
+</html>

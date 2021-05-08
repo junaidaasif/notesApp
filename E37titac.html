@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(78, 78, 100);
+        }
+
+        .cont {
+            height: 350px;
+            width: 300px;
+            background-color: wheat;
+            position: absolute;
+            top: 18%;
+            left: 37%;
+            border-radius: 10px;
+        }
+
+
+
+
+
+        .num {
+            max-width: 270px;
+            height: 90px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        table td {
+            padding: 9px;
+
+        }
+
+        button {
+            height: 45px;
+            width: 65px;
+            outline: none;
+            font-size: 30px;
+        }
+
+        #rel1 {
+            width: 250px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            text-align: center;
+            font-size: 28px;
+            border-radius: 10px;
+        }
+
+        #rel2 {
+            width: 250px;
+            height: 100px;
+            background-color: white;
+            position: absolute;
+            top: 40%;
+            right: 10%;
+            text-align: center;
+            font-size: 28px;
+            border-radius: 10px;
+        }
+
+        #col {
+            width: 100px;
+            margin-left: 65px;
+        }
+    </style>
+
+    <script>
+        var count = 0;
+        var tount = 0
+        var turn = 1;
+        var w = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        function show1() {
+            var a = document.getElementById('t1').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[0] = 100;
+                    document.getElementById("t1").innerHTML = "*";
+                    check();
+                    turn++
+                }
+                else {
+                    col()
+                    w[0] = 0
+                    document.getElementById("t1").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+
+        function show2() {
+            
+            var a = document.getElementById('t2').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[1] = 100;
+                    document.getElementById("t2").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {
+                    col()
+                    w[1] = 0;
+                    document.getElementById("t2").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show3() {
+            var a = document.getElementById('t3').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[2] = 100;
+                    document.getElementById("t3").innerHTML = "*";
+                    check();
+                    turn++
+                }
+                else {
+                    col()
+                    w[2] = 0;
+                    document.getElementById("t3").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show4() {
+            var a = document.getElementById('t4').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[3] = 100;
+                    document.getElementById("t4").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {
+                    col()
+                    w[3] = 0;
+                    document.getElementById("t4").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show5() {
+            var a = document.getElementById('t5').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[4] = 100;
+                    document.getElementById("t5").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {
+                    col()
+                    w[4] = 0
+                    document.getElementById("t5").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show6() {
+            var a = document.getElementById('t6').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[5] = 100
+                    document.getElementById("t6").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {
+                    col()
+                    w[5] = 0
+                    document.getElementById("t6").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show7() {
+            var a = document.getElementById('t7').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[6] = 100
+                    document.getElementById("t7").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {
+                    col()
+                    w[6] = 0;
+                    document.getElementById("t7").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show8() {
+            var a = document.getElementById('t8').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[7] = 100
+                    document.getElementById("t8").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {
+                    col()
+                    w[7] = 0
+                    document.getElementById("t8").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+        function show9() {
+            var a = document.getElementById('t9').innerHTML;
+            if (a == "") {
+                if (turn % 2 == 1) {
+                    col()
+                    w[8] = 100
+                    document.getElementById("t9").innerHTML = "*";
+                    check();
+                    turn++;
+                }
+                else {col()
+                    w[8] = 0
+                    document.getElementById("t9").innerHTML = "0";
+                    check();
+                    turn++;
+                }
+            }
+        }
+
+        function check() {
+            if (w[0] == w[1] && w[0] == w[2] || w[0] == w[3] && w[0] == w[6] || w[1] == w[4] && w[1] == w[7] || w[2] == w[5] && w[2] == w[8] || w[3] == w[4] && w[3] == w[5] || w[6] == w[7] && w[6] == w[8] || w[0] == w[4] && w[0] == w[8] || w[2] == w[4] && w[2] == w[6]) {
+                // if (w[0] + w[1] + w[2] == 0 || w[3] + w[4] + w[5] == 0 || w[6] + w[7] + w[8] == 0 || w[0] + w[3] + w[6] == 0 || w[1] + w[4] + w[7] == 0 || w[2] + w[5] + w[8] == 0 || w[0]+w[4]+w[8]==0 || w[2]+w[4]+w[6]==0) {
+                //     alert("player 2 are the winner")
+                //     reload();
+                // }
+                // else if(w[0] + w[1] + w[2] == 300 || w[3] + w[4] + w[5] == 300 || w[6] + w[7] + w[8] == 300 || w[0] + w[3] + w[6] == 300 || w[1] + w[4] + w[7] == 300 || w[2] + w[5] + w[8] == 300 || w[0]+w[4]+w[8]==300 || w[2]+w[4]+w[6]==300)  {
+                //     alert("player 1 is winner")
+                //     reload()
+                // }
+                if (turn % 2 == 1) {
+                    alert("player 1 is winner")
+                    reload()
+                    count++;
+                    document.getElementById("save1").innerHTML = count;
+                    if (count >= 3) {
+                        document.getElementById("save1").innerHTML = "player one is the winner of whole series"
+                    }
+                }
+                else {
+                    alert("player 2 is winner")
+                    reload()
+                    tount++;
+                    document.getElementById("save2").innerHTML = tount;
+                    if (tount >= 3) {
+                        document.getElementById("save2").innerHTML = "player two is the winner of whole series"
+                    }
+                }
+            }
+        }
+
+        function reload() {
+            w = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+            document.getElementById("t1").innerHTML = ""
+            document.getElementById("t2").innerHTML = ""
+            document.getElementById("t3").innerHTML = ""
+            document.getElementById("t4").innerHTML = ""
+            document.getElementById("t5").innerHTML = ""
+            document.getElementById("t6").innerHTML = ""
+            document.getElementById("t7").innerHTML = ""
+            document.getElementById("t8").innerHTML = ""
+            document.getElementById("t9").innerHTML = ""
+        }
+
+        function col(){
+            if(turn % 2 == 1){
+                document.getElementById("rel2").style.background = "red";
+                document.getElementById("rel1").style.background = "white";
+            }
+            else{
+                document.getElementById("rel1").style.background = "red";
+                document.getElementById("rel2").style.background = "white";
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="rel1">
+        <div>Player 1</div>
+        <div id="save1" style="font-size: 22px;"></div>
+    </div>
+    <div id="rel2">
+        <div>Player 2</div>
+        <div id="save2" style="font-size: 22px;"></div>
+    </div>
+    <div class="cont" style=" padding:  50px ;">
+        <div id="play1" style="float: left;width: 50%; font-size: 25px; ">Player 1</div>
+        <div id="play2" style="text-align: end;float: right; font-size: 25px;">Player 2</div>
+        <div class="num">
+            <table>
+                <tr>
+                    <td><button id="t1" onclick="show1()"></button></td>
+                    <td><button id="t2" onclick="show2()"></button></td>
+                    <td><button id="t3" onclick="show3()"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="t4" onclick="show4()"></button></td>
+                    <td><button id="t5" onclick="show5()"></button></td>
+                    <td><button id="t6" onclick="show6()"></button></td>
+
+                </tr>
+                <tr>
+                    <td><button id="t7" onclick="show7()"></button></td>
+                    <td><button id="t8" onclick="show8()"></button></td>
+                    <td><button id="t9" onclick="show9()"></button></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><button id="col" onclick="window.location.reload();"
+                            style="font-size: 15px;">Refresh</button></td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Ubuntu:wght@300&display=swap');
+
+:root{
+    --font1: 'Crimson Text', serif;
+    --font2: 'Ubuntu', sans-serif;
+    --Scol: #017143;
+}
+
+
+.font1{
+    font-family: var(--font1);
+}
+.font2{
+    font-family: var(--font2);
+}
+
+.navigation{
+    font-family: var(--font2);
+    height: 80px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left img{
+    height: 70px;
+    width: 70px;
+}
+
+.nav-right{
+    font-size: 25px;
+    display: flex;
+}
+
+.nav-right ul{
+
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.nav-right ul li{
+    list-style: none;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: bold;
+   
+    
+}
+
+.nav-right ul li a{
+    text-decoration: none;
+    color: black;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.nav-right ul li a:hover{
+    color:  var(--Scol);
+}
+.form-input{
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid gray;
+    font-family: var(--font2);
+}
+
+.search-btn{
+    border: none;
+    margin-left: -30px;
+    font-size: 20px;
+    color: var(--Scol);
+    background: white;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.search-btn:hover{
+color: black;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: relative; */
+}
+
+.textBox{
+    width: 600px;
+}
+
+.textBox h1{
+    color:  #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+    font-family: var(--font1);
+
+}
+
+.textBox h1 span{
+    color: #017143;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+.textBox p{
+    color: #333;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.3em;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+.textBox a{
+display: inline-block;
+margin-top: 20px;
+padding: 8px 20px;
+background: var(--Scol);
+color: #fff;
+font-weight: 500;
+letter-spacing: 1px;
+text-decoration: none;
+border-radius: 40px;
+font-size: 20px;
+}
+
+.imgBox{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.imgBox img{
+        max-width: 340px;
+}
+
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.thumb li{
+    list-style: none;
+    /* display: inline-block; */
+    margin: 0px 20px;
+    cursor: pointer;
+    transition: all 0.3s linear ;
+}
+
+.thumb li:hover{
+    transform: translateY(-20px);
+}
+
+.thumb li img{
+    max-width: 60px;
+}
+
+.sci li{
+    list-style: none;
+    margin: 20px;
+}
+
+
+
+.sci li img{
+    max-width: 30px;
+    filter: invert(1);
+   
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Scol);
+    clip-path: circle(600px at right 800px);
+    z-index: -1;
+}

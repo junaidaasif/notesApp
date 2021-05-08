@@ -1,0 +1,42 @@
+@media only screen and (max-width: 1200px) {
+    .hstyles{
+        font-size: 18px;
+    }
+    .sec{
+        height: 1075px;
+    }
+    .sub-sec{display: block;
+    }
+    .cards {
+       
+        flex-direction: row;
+    
+        height: auto;
+        width: auto;
+    }
+    .btn{
+        width: 100px;
+        height: 36px;
+    }
+    .recent-articles {
+        height: 577px;
+     
+    }
+
+    .rec-cards{
+        width: 410px;
+        height: 492px;
+        margin: 0px 25px;
+    }
+    .rec-cards img {
+        width: 410px;
+        height: 263px;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    .content-right{
+        display: none;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">  
+    <link rel="stylesheet" href="utilites.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto mar-top">
+        <div class="nav-left">
+            <img src="img/logo.png">
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <form action="/search.html" method="get">
+            <input type="text" id="search" class="form-input" name="querry" placeholder="Search Articles">
+            <button class="search-btn"><i class="fa fa-search"></i></button>
+        </form>
+        </div>
+    </nav>
+    <div class="container max-width-1 m-auto mar-top-1">
+        <div class="circle">
+
+        </div>
+        <div class="textBox">
+            <h1>Its Not Just A Coffee<br>
+            It's <span>Starbucks</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ipsa repellendus eligendi neque quam mollitia assumenda repellat corrupti. Officiis quia nihil voluptates sunt, hic voluptatibus qui amet harum, corrupti tenetur natus ducimus enim! Lorem ipsum, dolor sit amet  unde corporis sapiente id.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+            <img src="img/img1.png" class="starbucks">
+        </div>
+        <ul class="thumb">
+            <li><img src="img/thumb1.png" onclick="change('img/img1.png'); circleColor('#017143')"></li>
+            <li><img src="img/thumb2.png" onclick="change('img/img2.png'); circleColor('#eb7495')"></li>
+            <li><img src="img/thumb3.png" onclick="change('img/img3.png'); circleColor('#d752b1')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/md.junaid.58/" target="blank" id="im1"><img src="img/facebook.png"></a></li>
+            <li><a href="" id="im2"><img src="img/instagram.png"></a></li>
+            <li><a href="https://twitter.com/Mohmmad93920307" target="blank" id="im3"><img src="img/twitter.png"></a></li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
